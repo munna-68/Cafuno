@@ -1,78 +1,95 @@
 // Root application component — replace this with your app's entry UI
-import './App.css'
-import heroImage from './assets/hero.jpg'
-import storyImage from './assets/story.jpg'
-import interiorImage from './assets/interior.jpg'
-import menuBeansImage from './assets/menu-1.jpg'
-import menuPourImage from './assets/menu-2.jpg'
+import "./App.css";
+import heroImage from "./assets/hero.jpg";
+import storyImage from "./assets/story.jpg";
+import interiorImage from "./assets/interior.jpg";
+import menuBeansImage from "./assets/menu-1.jpg";
+import menuPourImage from "./assets/menu-2.jpg";
 
 const navLinks = [
-  { label: 'STORY', href: '#story' },
-  { label: 'MENU', href: '#menu' },
-  { label: 'ATMOSPHERE', href: '#atmosphere' },
-  { label: 'LOCATIONS', href: '#visit' },
-]
+  { label: "STORY", href: "#story" },
+  { label: "MENU", href: "#menu" },
+  { label: "ATMOSPHERE", href: "#atmosphere" },
+  { label: "LOCATIONS", href: "#visit" },
+];
 
 const heroStats = [
-  { value: '7 DAYS', label: 'Open weekly' },
-  { value: '12 ROASTS', label: 'In rotation' },
-  { value: 'MANHATTAN', label: 'Born here' },
-]
+  { value: "7 DAYS", label: "Open weekly" },
+  { value: "12 ROASTS", label: "In rotation" },
+  { value: "MANHATTAN", label: "Born here" },
+];
 
 const menuCards = [
   {
-    eyebrow: 'POUR OVER',
-    title: 'Midnight Espresso',
+    eyebrow: "POUR OVER",
+    title: "Midnight Espresso",
     description:
-      'our signature roast, featuring a rich, velvety body and a dense, golden crema.',
+      "our signature roast, featuring a rich, velvety body and a dense, golden crema.",
     image: menuPourImage,
-    alt: 'A close-up espresso extraction and latte art in warm light',
-    size: 'feature',
+    alt: "A close-up espresso extraction and latte art in warm light",
+    size: "feature",
   },
   {
-    eyebrow: 'SINGLE ORIGIN',
-    title: 'Cappuccino',
-    description: 'Silky milk, layered foam, and a calm finish that settles softly.',
+    eyebrow: "SINGLE ORIGIN",
+    title: "Cappuccino",
+    description:
+      "Silky milk, layered foam, and a calm finish that settles softly.",
     image: menuBeansImage,
-    alt: 'A dense field of roasted coffee beans',
-    size: 'stack-top',
+    alt: "A dense field of roasted coffee beans",
+    size: "stack-top",
   },
   {
-    eyebrow: 'HOUSE BLEND',
-    title: 'Pour Over',
-    description: 'Bright acidity, floral aroma, and a transparent finish.',
+    eyebrow: "HOUSE BLEND",
+    title: "Pour Over",
+    description: "Bright acidity, floral aroma, and a transparent finish.",
     image: storyImage,
-    alt: 'A circular table of coffee cups arranged in a quiet ritual',
-    size: 'stack-bottom',
+    alt: "A circular table of coffee cups arranged in a quiet ritual",
+    size: "stack-bottom",
   },
-]
+];
 
-const footerLinks = ['JOURNAL', 'WHOLESALE', 'CAREERS', 'PRIVACY']
+const footerLinks = ["JOURNAL", "WHOLESALE", "CAREERS", "PRIVACY"];
 
 function ArrowIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" className="icon-arrow">
-      <path d="M5 12h13m0 0-6-6m6 6-6 6" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" />
+      <path
+        d="M5 12h13m0 0-6-6m6 6-6 6"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.75"
+      />
     </svg>
-  )
+  );
 }
 
-function MediaFrame({ src, alt, aspect = '16 / 10', eager = false, className = '' }) {
+function MediaFrame({
+  src,
+  alt,
+  aspect = "16 / 10",
+  eager = false,
+  className = "",
+}) {
   return (
-    <figure className={`media-frame ${className}`.trim()} style={{ aspectRatio: aspect }}>
+    <figure
+      className={`media-frame ${className}`.trim()}
+      style={{ aspectRatio: aspect }}
+    >
       <img
         src={src}
         alt={alt}
-        loading={eager ? 'eager' : 'lazy'}
-        fetchPriority={eager ? 'high' : 'auto'}
+        loading={eager ? "eager" : "lazy"}
+        fetchPriority={eager ? "high" : "auto"}
         decoding="async"
       />
     </figure>
-  )
+  );
 }
 
 function App() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className="site-shell">
@@ -106,8 +123,8 @@ function App() {
 
             <aside className="hero__aside">
               <p className="hero__lede">
-                A sensory sanctuary born in Manhattan, where Scandinavian precision meets
-                industrial warmth.
+                A sensory sanctuary born in Manhattan, where Scandinavian
+                precision meets industrial warmth.
               </p>
             </aside>
 
@@ -152,9 +169,10 @@ function App() {
               <p className="section-label">STORY</p>
               <h2>Crafting the Momentum of Silence.</h2>
               <p>
-                Cafuno was established with a singular vision: to strip away the noise of the
-                city and focus on the fundamental purity of the bean. Our process is a dialogue
-                between the roaster and the harvest.
+                Cafuno was established with a singular vision: to strip away the
+                noise of the city and focus on the fundamental purity of the
+                bean. Our process is a dialogue between the roaster and the
+                harvest.
               </p>
               <a className="inline-link" href="#menu">
                 Learn our process
@@ -172,7 +190,8 @@ function App() {
                 <h2>Seasonal signatures, dialed with restraint.</h2>
               </div>
               <p className="section-note">
-                Season 01 — Spring. Each cup is balanced for clarity, texture, and a long finish.
+                Season 01 — Spring. Each cup is balanced for clarity, texture,
+                and a long finish.
               </p>
             </div>
 
@@ -243,8 +262,8 @@ function App() {
                 <p className="section-label">ATMOSPHERE</p>
                 <h2>Designed for negative space and material integrity.</h2>
                 <p>
-                  Designed by Studio Nord, our spaces are a study in negative space and material
-                  integrity.
+                  Designed by Studio Nord, our spaces are a study in negative
+                  space and material integrity.
                 </p>
               </div>
             </div>
@@ -297,7 +316,7 @@ function App() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
